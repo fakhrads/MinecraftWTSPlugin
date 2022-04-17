@@ -21,7 +21,7 @@ public class WtsCommand implements CommandExecutor {
                 sender.sendMessage("Argument Cannot Null!");
                 return false;
             } else {
-                Bukkit.broadcastMessage(ChatColor.LIGHT_PURPLE +"WTS > " + ChatColor.AQUA + args.toString());
+                Bukkit.broadcastMessage(ChatColor.LIGHT_PURPLE +"WTS > " + ChatColor.AQUA + args[0].toString());
             }
         } else {
             sender.sendMessage("You must be a player!");
