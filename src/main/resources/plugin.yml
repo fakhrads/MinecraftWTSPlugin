@@ -1,0 +1,8 @@
+name: WtsWtbPlugin
+version: 1.0
+api-version: 1.13
+main: id.fakhrads.spigotmc.plugin.template.TemplatePlugin
+
+commands:
+  enrich:
+    description: Makes you rich!
