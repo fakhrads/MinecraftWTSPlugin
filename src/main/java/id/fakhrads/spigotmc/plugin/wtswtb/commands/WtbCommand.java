@@ -5,10 +5,13 @@ import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
+import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.PlayerInventory;
 
 public class WtbCommand implements CommandExecutor {
+
+    FileConfiguration config;
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String s, String[] args) {
@@ -22,7 +25,7 @@ public class WtbCommand implements CommandExecutor {
                 sender.sendMessage("Argument Cannot Null!");
                 return false;
             } else {
-                Bukkit.broadcastMessage(ChatColor.LIGHT_PURPLE +"WTB > " + ChatColor.AQUA + args[0].toString());
+                Bukkit.broadcastMessage(ChatColor.LIGHT_PURPLE + config.getString("wtb-prefix") + ChatColor.AQUA + config.getString("wtb-message") + args[0].toString());
             }
         } else {
             sender.sendMessage("You must be a player!");

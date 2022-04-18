@@ -7,8 +7,11 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.PlayerInventory;
+import org.bukkit.configuration.file.FileConfiguration;
 
 public class WtsCommand implements CommandExecutor {
+    
+    FileConfiguration config;
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String s, String[] args) {
@@ -21,7 +24,7 @@ public class WtsCommand implements CommandExecutor {
                 sender.sendMessage("Argument Cannot Null!");
                 return false;
             } else {
-                Bukkit.broadcastMessage(ChatColor.LIGHT_PURPLE +"WTS > " + ChatColor.AQUA + args[0].toString());
+                Bukkit.broadcastMessage(ChatColor.LIGHT_PURPLE + config.getString("wts-prefix") + ChatColor.AQUA + config.getString("wts-prefix") + args[0].toString());
             }
         } else {
             sender.sendMessage("You must be a player!");
